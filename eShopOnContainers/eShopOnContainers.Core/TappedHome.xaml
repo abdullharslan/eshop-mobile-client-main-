@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+x:Class="eShopOnContainers.Core.TappedHome"
+xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+xmlns:local1="clr-namespace:eShopOnContainers.Core.ViewModel"
+android:TabbedPage.ToolbarPlacement="Bottom"
+SelectedTabColor="Black"
+BarTextColor="Gray"
+NavigationPage.HasNavigationBar="False">
+    <NavigationPage  Title="Ana Sayfa" IconImageSource="home.png">
+        <x:Arguments>
+            <local1:HomePage />
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage Title="Kategoriler" IconImageSource="category.png">
+        <x:Arguments>
+            <local1:Categories />
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage Title="Favoriler" IconImageSource="favorites.png">
+        <x:Arguments>
+            <local1:Favorites />
+        </x:Arguments>
+    </NavigationPage>
+
+    <NavigationPage Title="Profil" IconImageSource="profile.png">
+        <x:Arguments>
+            <local1:Account />
+        </x:Arguments>
+    </NavigationPage>
+</TabbedPage>

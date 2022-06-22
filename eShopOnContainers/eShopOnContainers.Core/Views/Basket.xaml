@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:control="clr-namespace:Xamarin.Forms.StepProgressBar;assembly=Xamarin.Forms.StepProgressBar"
+    xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+    x:Class="eShopOnContainers.Core.ViewModel.Basket">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout  VerticalOptions="Start" BackgroundColor="White" Orientation="Horizontal" HorizontalOptions="FillAndExpand" HeightRequest="60">
+                <ImageButton Clicked="GeriAl" HorizontalOptions="Start" BackgroundColor="Transparent" Margin="10,10,0,10" HeightRequest="50" WidthRequest="50" Source="arrow.png" Rotation="180"></ImageButton>
+                <Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Margin="-30,0,0,0" FontSize="20" Text="Sepet"></Label>
+            </StackLayout>
+            <StackLayout IsVisible="False" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <ffimageloading:CachedImage HeightRequest="200" WidthRequest="200"  Source="dress.jpg" ></ffimageloading:CachedImage>
+                <Label Text="Sepetinizde ürününüz bulunmuyor." ></Label>
+            </StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    <StackLayout>
+                        <StackLayout  Margin="70,0,70,0">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                <Label VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand" FontSize="15" TextColor="Black" Text="SEPET"></Label>
+                                <Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="15" TextColor="Black" Text="ADRES"></Label>
+                                <Label VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand" FontSize="15" TextColor="Black" Text="ÖDEME"></Label>
+                            </StackLayout>
+                            <control:StepProgressBar  HorizontalOptions="FillAndExpand" x:Name="stepbar1" StepCanTouch = "False" StepColor="Black"  Steps="3" StepSelected="1"  IsCircle= "true"  />
+                        </StackLayout>
+
+                        <StackLayout>
+                            <ListView  SelectionMode="None" RowHeight="270" x:Name="sepetsutun" ItemsSource="{Binding .}" >
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout>
+                                                <Frame BorderColor="Gray" Margin="20,0,20,0">
+                                                    <StackLayout Orientation="Horizontal">
+                                                        <ffimageloading:CachedImage HorizontalOptions="Start" HeightRequest="180" WidthRequest="150" Aspect="AspectFill" Source="{Binding UrunUrl}">
+                                                        </ffimageloading:CachedImage>
+                                                        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+                                                            <Label Text="{Binding UrunIsim}" TextColor="Black" FontSize="20"></Label>
+                                                            <Label Text="Ürün Kodu : 12093781" TextColor="Gray" FontSize="15"></Label>
+                                                            <Label Text="{Binding UrunFiyat}" TextColor="Black" FontSize="15"></Label>
+                                                            <StackLayout Orientation="Horizontal">
+                                                                <Frame Padding="0" CornerRadius="50">
+                                                                    <Image BackgroundColor="Black" HeightRequest="40" WidthRequest="40"></Image>
+                                                                </Frame>
+                                                                <Frame Padding="0"  BackgroundColor="Black" CornerRadius="0" HeightRequest="40" WidthRequest="40">
+                                                                    <Label Text="M" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label>
+                                                                </Frame>
+                                                            </StackLayout>
+                                                        </StackLayout>
+                                                        <ImageButton Clicked="ImageButton_Clicked" CommandParameter="{Binding .}" HeightRequest="50" WidthRequest="50" BackgroundColor="Transparent" VerticalOptions="EndAndExpand" HorizontalOptions="EndAndExpand" Source="trash.png"></ImageButton>
+                                                    </StackLayout>
+                                                </Frame>
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+                        
+
+                   
+                    
+                        <Label Margin="20,20,20,0" FontSize="20" TextColor="Black" Text="HEDİYE ÇEKLERİM"></Label>
+                        <Label Margin="20,0,20,0" FontSize="15" TextColor="DimGray" Text="Nevcut kuponunuz bulunmuyor."></Label>
+                        <StackLayout Margin="20" Orientation="Horizontal">
+                            <input:AdvancedEntry  CornerRadius="0" IconColor="Gray" Text="{Binding Phone}" IsRequired="True" TextColor="Black" Title="Kupon Kodu Gir" Annotation="LongType" IsPassword="True" Placeholder="Kupon Kodu Gir" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" AnnotationColor="Accent" IconImage="coupon.png" MaxLength="10"/>
+                            <Button Text="KULLAN" FontSize="20" HeightRequest="50" VerticalOptions="EndAndExpand" BackgroundColor="Black" TextColor="White" HorizontalOptions="End"></Button>
+                        </StackLayout>
+                        <StackLayout Margin="20">
+                            <Frame BorderColor="DimGray" Padding="0">
+                                <StackLayout>
+                                    <Frame BorderColor="DimGray" BackgroundColor="#e8e8e8" Padding="0">
+                                        <Label Margin="20" FontSize="20" TextColor="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Text="SİPARİŞ ÖZETİ"></Label>
+                                    </Frame>
+                                    <StackLayout>
+                                        <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                                            <Label TextColor="Black" Text="SEPET"></Label>
+                                            <Label TextColor="Black" HorizontalOptions="EndAndExpand" Text="639TL"></Label>
+                                        </StackLayout>
+                                        <BoxView HorizontalOptions="FillAndExpand" HeightRequest="2" Color="DimGray"></BoxView>
+                                    </StackLayout>
+                                    <StackLayout>
+                                        <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                                            <Label TextColor="Black" Text="TOPLAM"></Label>
+                                            <Label  TextColor="Black" HorizontalOptions="EndAndExpand" Text="639TL"></Label>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                                        <Label x:Name="Adet" TextColor="Gray" Text="2 ADET"></Label>
+                                        <Label TextColor="Gray" HorizontalOptions="EndAndExpand" Text="(KDV Dahil)"></Label>
+                                    </StackLayout>
+                                </StackLayout> 
+                            </Frame>
+                            <StackLayout Margin="0,20,0,0" BackgroundColor="#dbdbdb" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="0,20,0,20">
+                                <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                                    <Image HeightRequest="35" WidthRequest="35" Source="box.png"></Image>
+                                    <Label VerticalOptions="CenterAndExpand" TextColor="Black" FontSize="15" Text="App'e Özel Ücretsiz Kargo"></Label>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                                    <Image HeightRequest="35" WidthRequest="35" Source="change.png"></Image>
+                                    <Label VerticalOptions="CenterAndExpand" TextColor="Black" FontSize="15" Text="90 gün Boyunca Ücretsiz Değişim ve İade"></Label>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                                    <Image HeightRequest="35" WidthRequest="35" Source="cargo.png"></Image>
+                                    <Label VerticalOptions="CenterAndExpand" TextColor="Black" FontSize="15" Text="Aynı Gün ve Ertesi Gün Teslimat Seçenekleri"></Label>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                                    <Image HeightRequest="35" WidthRequest="35" Source="bank.png"></Image>
+                                    <Label VerticalOptions="CenterAndExpand" TextColor="Black" FontSize="15" Text="Masterpass ile Güvenli,Hızlı ve Kolay Ödeme"></Label>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Margin="20,0,20,0">
+                                    <Image HeightRequest="35" WidthRequest="35" Source="gift.png"></Image>
+                                    <Label VerticalOptions="CenterAndExpand" TextColor="Black" FontSize="15" Text="Alışverişini 500₺ye Tamamla 50₺ Kazan!"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <Button Clicked="GirisYap" Margin="20" Text="DEVAM ET" FontSize="20" HeightRequest="50" VerticalOptions="CenterAndExpand" BackgroundColor="Black" TextColor="White" HorizontalOptions="FillAndExpand"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

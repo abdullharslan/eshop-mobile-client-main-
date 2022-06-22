@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    x:Class="eShopOnContainers.Core.ViewModel.Account"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <StackLayout  VerticalOptions="Start" BackgroundColor="White" Orientation="Horizontal" HorizontalOptions="FillAndExpand" HeightRequest="60">
+                <ImageButton Clicked="KategoriButton" HorizontalOptions="StartAndExpand" BackgroundColor="Transparent" Margin="10,10,0,10" HeightRequest="50" WidthRequest="50" Source="category.png"></ImageButton>
+                <ImageButton  HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" Margin="0,10,0,10" HeightRequest="50" WidthRequest="200" Source="youroxxo.jpg"></ImageButton>
+                <StackLayout Margin="0,10,20,10" Orientation="Horizontal" HorizontalOptions="End">
+                    <ImageButton Clicked="AramaButon"  BackgroundColor="Transparent"  HeightRequest="50" WidthRequest="50" Source="search.png"></ImageButton>
+                    <ImageButton Clicked="SepetButton"  BackgroundColor="Transparent"  HeightRequest="50" WidthRequest="50" Source="basket.png"></ImageButton>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout>
+                <Frame Padding="0" BackgroundColor="Transparent">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GirisYap" NumberOfTapsRequired="1"/>
+                    </Frame.GestureRecognizers>
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <ffimageloading:CachedImage Margin="10" Source="profile.png" HeightRequest="30" WidthRequest="30" Aspect="Fill"></ffimageloading:CachedImage>
+                            <Label VerticalOptions="CenterAndExpand" Text="Hesabım"></Label>
+                            <ffimageloading:CachedImage HorizontalOptions="EndAndExpand" Margin="10" Source="more.png" HeightRequest="30" WidthRequest="30" Aspect="Fill"></ffimageloading:CachedImage>
+                        </StackLayout>
+                        <StackLayout BackgroundColor="Gray" HorizontalOptions="FillAndExpand" HeightRequest="1"></StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame Padding="0" BackgroundColor="Transparent">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GirisYap" NumberOfTapsRequired="1"/>
+                    </Frame.GestureRecognizers>
+                    <StackLayout>
+                        <StackLayout  Orientation="Horizontal">
+                            <ffimageloading:CachedImage Margin="10" Source="arrow.png" HeightRequest="30" WidthRequest="30" Aspect="Fill"></ffimageloading:CachedImage>
+                            <Label VerticalOptions="CenterAndExpand" Text="Siparişlerim"></Label>
+                            <ffimageloading:CachedImage HorizontalOptions="EndAndExpand" Margin="10" Source="more.png" HeightRequest="30" WidthRequest="30" Aspect="Fill"></ffimageloading:CachedImage>
+                        </StackLayout>
+                        <StackLayout BackgroundColor="Gray" HorizontalOptions="FillAndExpand" HeightRequest="1"></StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame Padding="0" BackgroundColor="Transparent">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GirisYap" NumberOfTapsRequired="1"/>
+                    </Frame.GestureRecognizers>
+                    <StackLayout>
+                        <StackLayout  Orientation="Horizontal">
+                            <ffimageloading:CachedImage Margin="10" Source="location.png" HeightRequest="30" WidthRequest="30" Aspect="Fill"></ffimageloading:CachedImage>
+                            <Label VerticalOptions="CenterAndExpand" Text="Adreslerim"></Label>
+                            <ffimageloading:CachedImage HorizontalOptions="EndAndExpand" Margin="10" Source="more.png" HeightRequest="30" WidthRequest="30" Aspect="Fill"></ffimageloading:CachedImage>
+                        </StackLayout>
+                        <StackLayout BackgroundColor="Gray" HorizontalOptions="FillAndExpand" HeightRequest="1"></StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame Padding="0" BackgroundColor="Transparent">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GirisYap" NumberOfTapsRequired="1"/>
+                    </Frame.GestureRecognizers>
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <ffimageloading:CachedImage Margin="10" Source="gift.jpg" HeightRequest="30" WidthRequest="30" Aspect="Fill"></ffimageloading:CachedImage>
+                            <Label VerticalOptions="CenterAndExpand" Text="Hediye Kartlarım"></Label>
+                            <ffimageloading:CachedImage HorizontalOptions="EndAndExpand" Margin="10" Source="more.png" HeightRequest="30" WidthRequest="30" Aspect="Fill"></ffimageloading:CachedImage>
+                        </StackLayout>
+                        <StackLayout BackgroundColor="Gray" HorizontalOptions="FillAndExpand" HeightRequest="1"></StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame Padding="0" BackgroundColor="Transparent">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GirisYap" NumberOfTapsRequired="1"/>
+                    </Frame.GestureRecognizers>
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <ffimageloading:CachedImage Margin="10" Source="bank.png" HeightRequest="30" WidthRequest="30" Aspect="Fill"></ffimageloading:CachedImage>
+                            <Label VerticalOptions="CenterAndExpand" Text="Banka Bilgileri"></Label>
+                            <ffimageloading:CachedImage HorizontalOptions="EndAndExpand" Margin="10" Source="more.png" HeightRequest="30" WidthRequest="30" Aspect="Fill"></ffimageloading:CachedImage>
+                        </StackLayout>
+                        <StackLayout BackgroundColor="Gray" HorizontalOptions="FillAndExpand" HeightRequest="1"></StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame Padding="0" BackgroundColor="Transparent">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GirisYap" NumberOfTapsRequired="1"/>
+                    </Frame.GestureRecognizers>
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <ffimageloading:CachedImage Margin="10" Source="logout.png" HeightRequest="30" WidthRequest="30" Aspect="Fill"></ffimageloading:CachedImage>
+                            <Label VerticalOptions="CenterAndExpand" Text="Çıkış Yap"></Label>
+                            <ffimageloading:CachedImage HorizontalOptions="EndAndExpand" Margin="10" Source="more.png" HeightRequest="30" WidthRequest="30" Aspect="Fill"></ffimageloading:CachedImage>
+                        </StackLayout>
+                        <StackLayout BackgroundColor="Gray" HorizontalOptions="FillAndExpand" HeightRequest="1"></StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

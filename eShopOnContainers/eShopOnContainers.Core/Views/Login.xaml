@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="eShopOnContainers.Core.ViewModel.Login"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout BackgroundColor="White">
+            <ImageButton Clicked="GeriAl" HorizontalOptions="StartAndExpand" Margin="10" Rotation="180" BackgroundColor="Transparent" Source="arrow.png"></ImageButton>
+            <StackLayout  BackgroundColor="White" VerticalOptions="FillAndExpand" HorizontalOptions="CenterAndExpand">
+                <ffimageloading:CachedImage VerticalOptions="Start"  HeightRequest="166" WidthRequest="194" HorizontalOptions="CenterAndExpand" Aspect="Fill" Source="youroxxo.jpg"></ffimageloading:CachedImage>
+                <Frame Margin="50,-50,50,0" VerticalOptions="CenterAndExpand" Padding="0" CornerRadius="5" BorderColor="Gray">
+                    <StackLayout  Padding="0">
+                        <StackLayout Orientation="Horizontal">
+                            <StackLayout HorizontalOptions="FillAndExpand">
+                                <StackLayout Padding="0" Orientation="Horizontal">
+                                    <Button x:Name="Giris" Clicked="Giris_Clicked"  TextColor="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Text="Giriş Yap" BackgroundColor="Transparent"></Button>
+                                    <StackLayout  HorizontalOptions="End" WidthRequest="1" BackgroundColor="Gray"></StackLayout>
+                                </StackLayout>
+                                <StackLayout x:Name="GirisCizgi" Margin="0,-10,0,0" Padding="0" HeightRequest="3" BackgroundColor="Black"></StackLayout>
+                            </StackLayout>
+                            <StackLayout HorizontalOptions="FillAndExpand">
+                                <Button x:Name="Uye" Clicked="Uye_Clicked" TextColor="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Text="Üye Ol" BackgroundColor="Transparent"></Button>
+                                <StackLayout x:Name="KayitCizgi" Margin="-6,-10,0,0" Padding="0" HeightRequest="3" BackgroundColor="Gray"></StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout x:Name="GirisYapStack" IsVisible="False" Padding="30">
+                            <input:FormView IsValidated="{Binding IsValidated}">
+                                <input:AdvancedEntry CornerRadius="0" Text="{Binding Email}" IsRequired="True" Title="E-posta" Annotation="Email" IconColor="Gray" TextColor="Black" Placeholder="ornek@gmail.com" AnnotationColor="Accent" IconImage="email.png" MinLength="10" MaxLength="50"/>
+                                <input:AdvancedEntry CornerRadius="0" IconColor="Gray" Text="{Binding Phone}" IsRequired="True" TextColor="Black" Title="Şifre" Annotation="Password" IsPassword="True" Placeholder="5439998877" AnnotationColor="Accent" IconImage="password.png" MaxLength="10"/>
+                                <Button BackgroundColor="Transparent" Command="{Binding SubmitCommand}" Text="Şifrenizi mi unuttunuz?" TextTransform="None" TextColor="Gray" />
+                                <Button FontSize="20" BackgroundColor="Black" Command="{Binding SubmitCommand}" Text="GİRİŞ YAP" TextColor="White" />
+                                <Button FontSize="20" BackgroundColor="Blue" Command="{Binding SubmitCommand}" Text="FACEBOOK İLE GİRİŞ YAP" TextColor="White" />
+                            </input:FormView>
+                        </StackLayout>
+                        <StackLayout x:Name="KayitOlStack" IsVisible="True" Padding="20">
+                            <input:FormView IsValidated="{Binding IsValidated}">
+                                <input:AdvancedEntry CornerRadius="0" Text="{Binding Email}" IsRequired="True" Title="Ad Soyad" Annotation="LongType" IconColor="Gray" TextColor="Black" Placeholder="ornek@gmail.com" AnnotationColor="Accent" IconImage="name.png" MinLength="10" MaxLength="50"/>
+                                <input:AdvancedEntry CornerRadius="0" Text="{Binding Email}" IsRequired="True" Title="E-posta" Annotation="Email" IconColor="Gray" TextColor="Black" Placeholder="ornek@gmail.com" AnnotationColor="Accent" IconImage="email.png" MinLength="10" MaxLength="50"/>
+                                <input:AdvancedEntry CornerRadius="0" IconColor="Gray" Text="{Binding Phone}" IsRequired="True" TextColor="Black" Title="Şifre" Annotation="Password" IsPassword="True" Placeholder="5439998877" AnnotationColor="Accent" IconImage="password.png" MaxLength="10"/>
+                                <input:AdvancedEntry CornerRadius="0" IconColor="Gray" Text="{Binding Phone}" IsRequired="True" TextColor="Black" Title="Cep Telefonu / Tel" Annotation="Phone" Placeholder="5439998877" AnnotationColor="Accent" IconImage="phone.png" MaxLength="10"/>
+                                <input:CheckBox Text="Şartları ve Gizlilik Sözleşnesini okudum ve kabul ediyorum" Color="Black" ></input:CheckBox>
+                                <input:CheckBox Text="Kampanya ve duyuruları sms ile almak istiyorum" Color="Black"></input:CheckBox>
+                                <input:CheckBox Text="Kampanya ve duyuruları mail ile almak istiyorum" Color="Black"></input:CheckBox>
+                                <Button FontSize="20" BackgroundColor="Black" Command="{Binding SubmitCommand}" Text="Kayıt ol" TextColor="White" />
+                            </input:FormView>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+
