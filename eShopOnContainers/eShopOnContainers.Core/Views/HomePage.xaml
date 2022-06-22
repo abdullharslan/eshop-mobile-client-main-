@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="eShopOnContainers.Core.ViewModel.HomePage"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout  VerticalOptions="Start" BackgroundColor="White" Orientation="Horizontal" HorizontalOptions="FillAndExpand" HeightRequest="60">
+                <ImageButton Clicked="KategoriButton" HorizontalOptions="StartAndExpand" BackgroundColor="Transparent" Margin="10,10,0,10" HeightRequest="50" WidthRequest="50" Source="category.png"></ImageButton>
+                <ImageButton HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" Margin="0,10,0,10" HeightRequest="50" WidthRequest="200" Source="youroxxo.jpg"></ImageButton>
+                <StackLayout Margin="0,10,20,10" Orientation="Horizontal" HorizontalOptions="End">
+                    <ImageButton Clicked="AramaButon" BackgroundColor="Transparent" HeightRequest="50" WidthRequest="50" Source="search.png"></ImageButton>
+                    <ImageButton Clicked="SepetButton" BackgroundColor="Transparent" HeightRequest="50" WidthRequest="50" Source="basket.png"></ImageButton>
+                </StackLayout>
+            </StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    <StackLayout VerticalOptions="Start" Margin="20,20,20,-20">
+                        <Frame BorderColor="Gray">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="AramaButon" NumberOfTapsRequired="1"/>
+                            </Frame.GestureRecognizers>
+                            <StackLayout Orientation="Horizontal">
+                                <Frame Padding="0" BackgroundColor="Transparent">
+                                    <ffimageloading:CachedImage Source="search.png" HeightRequest="30" VerticalOptions="CenterAndExpand" HorizontalOptions="Start"></ffimageloading:CachedImage>
+                                </Frame>
+                                <Label HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" FontSize="20" Text="Ürün Ara"></Label>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout Margin="20" HeightRequest="200">
+                        <CarouselView x:Name="MainCarouselView">
+                            <CarouselView.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame Padding="0" BackgroundColor="Transparent" >
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="MiniTanitimButton" NumberOfTapsRequired="1" />
+                                        </Frame.GestureRecognizers><ffimageloading:CachedImage Source="{Binding UrunResim}"></ffimageloading:CachedImage>
+                                    </Frame>
+                                </DataTemplate>
+                            </CarouselView.ItemTemplate>
+                        </CarouselView>
+                    </StackLayout>
+                    <Frame Margin="5" HeightRequest="500" HorizontalOptions="FillAndExpand" Padding="0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Tanitim1Button" NumberOfTapsRequired="1" />
+                        </Frame.GestureRecognizers>
+                        <ffimageloading:CachedImage Aspect="AspectFill" Source="https://firebasestorage.googleapis.com/v0/b/recentram-afa1b.appspot.com/o/pant.png?alt=media&amp;token=74e536de-3045-4a05-ab2e-e583382604d6"></ffimageloading:CachedImage>
+                    </Frame>
+                    <Frame Margin="5" HeightRequest="500" HorizontalOptions="FillAndExpand" Padding="0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Tanitim2Button" NumberOfTapsRequired="1" />
+                        </Frame.GestureRecognizers>
+                        <ffimageloading:CachedImage Aspect="AspectFill" Source="https://firebasestorage.googleapis.com/v0/b/recentram-afa1b.appspot.com/o/AYAK.png?alt=media&amp;token=c9588b1d-40fb-46f8-bb58-269e9cdb88bf"></ffimageloading:CachedImage>
+                    </Frame>
+                    <StackLayout Orientation="Horizontal">
+                        <Frame Margin="5" WidthRequest="250" HeightRequest="250" HorizontalOptions="FillAndExpand" Padding="0">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Tanitim3Button" NumberOfTapsRequired="1" />
+                            </Frame.GestureRecognizers>
+                            <ffimageloading:CachedImage Aspect="AspectFill" Source="https://firebasestorage.googleapis.com/v0/b/recentram-afa1b.appspot.com/o/kamp3.png?alt=media&amp;token=7e121ad2-9234-45ce-a390-a9c3562181a7"></ffimageloading:CachedImage>
+                        </Frame>
+                        <Frame Margin="5" WidthRequest="250" HeightRequest="250" HorizontalOptions="FillAndExpand" Padding="0">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Tanitim4Button" NumberOfTapsRequired="1"/>
+                            </Frame.GestureRecognizers>
+                            <ffimageloading:CachedImage Aspect="AspectFill" Source="https://firebasestorage.googleapis.com/v0/b/recentram-afa1b.appspot.com/o/kamp4.png?alt=media&amp;token=cd19acde-1711-4321-8e7c-05d79b11ef75"></ffimageloading:CachedImage>
+                        </Frame>
+                    </StackLayout>
+                    <Frame Margin="5" HeightRequest="500" HorizontalOptions="FillAndExpand" Padding="0">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Tanitim5Button" NumberOfTapsRequired="1" />
+                        </Frame.GestureRecognizers>
+                        <ffimageloading:CachedImage  Aspect="AspectFill" Source="https://firebasestorage.googleapis.com/v0/b/recentram-afa1b.appspot.com/o/kamp5.png?alt=media&amp;token=4ef82e7f-7a60-4710-a09d-1e3c0b001d63"></ffimageloading:CachedImage>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
